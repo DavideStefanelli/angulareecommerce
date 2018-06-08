@@ -1,0 +1,32 @@
+<div class="jumbotron vertical-center">
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4 mx-auto">
+            <div class="login-form">
+                <form>
+                    <h2 class="text-center">Login</h2>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="mario.rossi@esempio.it" [(ngModel)]="email" required="required">
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                            <div *ngIf="email.errors.required">
+                                L'email non è valida
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" [(ngModel)]="password" placeholder="Password" required="required">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" (click)="doLogin()">Accedi</button>
+                    </div>
+                    <div class="clearfix">
+                        <a href="#" class="pull-right">Password dimenticata?</a>
+                    </div>
+                </form>
+                <p class="text-center">
+                    <a (click)="register()">Crea un Account</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
