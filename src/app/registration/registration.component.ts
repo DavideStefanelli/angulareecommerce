@@ -14,7 +14,7 @@ export class RegistrationComponent implements OnInit {
   registrationFormGroup : FormGroup;
   userToRegistrate : Registration;
 
-  email = new FormControl('', Validators.required);
+  email = new FormControl('', Validators.email);
   password = new FormControl('', Validators.required);
   name = new FormControl('', Validators.required);
   surname = new FormControl('', Validators.required);

@@ -7,11 +7,13 @@ import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './main/home/home.component';
 import { AccessService } from './access.service';
 import { JsonpModule } from '@angular/http';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RegistrationComponent } from './registration/registration.component';
+import { ProductComponent } from './main/product/product.component';
+import { ShopComponent } from './main/shop/shop.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { RegistrationComponent } from './registration/registration.component';
     RegistrationComponent,
     LoginComponent,
     UserComponent,
-    HomeComponent
+    HomeComponent,
+    ShopComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule, 
