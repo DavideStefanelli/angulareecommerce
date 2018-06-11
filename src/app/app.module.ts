@@ -16,6 +16,7 @@ import { ProductComponent } from './main/product/product.component';
 import { ShopComponent } from './main/shop/shop.component';
 import { ProductCardComponent } from './main/components/product-card/product-card.component';
 import { ShopService } from './shop.service';
+import { ProductService } from './product.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ShopService } from './shop.service';
   providers: [
 
     AccessService,
-    ShopService
+    ShopService,
+    ProductService
 
   ],
   bootstrap: [AppComponent]

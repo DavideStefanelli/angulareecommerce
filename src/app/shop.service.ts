@@ -12,9 +12,9 @@ export class ShopService {
 
   }
 
-  getShopProducts(shopId : number) : Observable<Product> {
+  getShopProducts(shopId : number) : Observable<Product[]> {
     const headers = new HttpHeaders().set("Content-Type", "application/json")
-    return this.http.get<Product>('http://127.0.0.1:8080/shop/' + shopId + '/products', { headers });
+    return this.http.get<Product[]>('http://127.0.0.1:8080/shop/' + shopId + '/products', { headers });
   }
   
 }

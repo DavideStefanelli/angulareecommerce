@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { Product } from '../../../product';
 
 @Component({
@@ -10,12 +10,13 @@ export class ProductCardComponent implements OnInit {
 
   @Input() product: Product;
 
+  name: string;
+
   constructor() { }
 
   ngOnInit() {
-
-    console.log(this.product.name)
-
+    this.name = this.product.name.substring(0, 20);
+    this.name = this.name.substring(0, this.name.lastIndexOf(' '));
   }
 
 }
