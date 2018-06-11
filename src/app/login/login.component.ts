@@ -43,7 +43,8 @@ export class LoginComponent implements OnInit {
   doLogin(user) {
     user = this.loginFormGroup.value as User; 
 
-    this.accessService.doLogin(user.email, user.password).subscribe(data => {
+    this.accessService.doLogin(user.email, user.password)
+    .subscribe(data => {
       this.loginStatus = data.status
       if(this.loginStatus === "LOGIN_OK") {
         this.accessService.currentUser = data.user

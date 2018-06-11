@@ -14,7 +14,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RegistrationComponent } from './registration/registration.component';
 import { ProductComponent } from './main/product/product.component';
 import { ShopComponent } from './main/shop/shop.component';
-
+import { ProductCardComponent } from './main/components/product-card/product-card.component';
+import { ShopService } from './shop.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ShopComponent } from './main/shop/shop.component';
     UserComponent,
     HomeComponent,
     ShopComponent,
-    ProductComponent
+    ProductComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule, 
@@ -35,7 +37,8 @@ import { ShopComponent } from './main/shop/shop.component';
   ],
   providers: [
 
-    AccessService
+    AccessService,
+    ShopService
 
   ],
   bootstrap: [AppComponent]

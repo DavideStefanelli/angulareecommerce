@@ -46,14 +46,8 @@
 
       <div class="row text-center">
 
-        
-        <div *ngFor="let number of [0,1,2,3,4,5,6,7,8]" class="col-lg-3">
-          <div class="card mt-4">
-            <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-            <div class="card-body"> 
-              <p class="card-text">Item name</p>
-            </div>
-          </div>
+        <div *ngFor="let product of products" class="col-lg-3">
+          <app-product-card title="{{product}}"></app-product-card>
         </div>
 
       </div>
