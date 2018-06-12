@@ -23,9 +23,7 @@ export class ProductComponent implements OnInit {
 
     this.productService.getProductDetail(this.id).subscribe( 
       data => { 
-        this.productDetail = data; 
-        this.productDetail.price = 299.99;
-        this.productDetail.rating = 4.3;
+        this.productDetail = data;
       }
     );
 

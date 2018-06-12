@@ -3,6 +3,9 @@ import { ProductCardComponent } from '../components/product-card/product-card.co
 import { ShopService } from '../../shop.service';
 import { Product } from '../../product';
 import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { Shop } from '../../shop';
+import { Shophome } from '../../shophome';
 
 @Component({
   selector: 'app-shop',
@@ -12,16 +15,28 @@ import { Observable } from 'rxjs';
 })
 export class ShopComponent implements OnInit {
 
+  id : number;
+
   @Output() products : Array<Product>;
  
-  constructor(public shopService : ShopService) {
+  shop : Shop;
+
+  constructor(private route: ActivatedRoute , public shopService : ShopService) {
 
   }
 
   ngOnInit() {
-    this.shopService.getShopProducts(1).subscribe(
-      (data : Product[]) => { this.products = data; }
+    this.route.params.subscribe(params =>{
+      this.id = +params['id'];
+    });
+    
+    this.shopService.getShopHome(this.id).subscribe(
+      (data : Shophome) => { 
+        this.shop = data.shop;
+        this.products = data.featuredproducts;
+      }
     );
+   
   
   }
 

@@ -6,7 +6,7 @@ export class Product {
 
 export class ProductDetail extends Product {
     public description : string;
-    public price : number = 0;
-    public rating : number = 0;
+    public price : number;
+    public rating : number;
     
 }
