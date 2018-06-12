@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { Shop } from '../../shop';
 import { Shophome } from '../../shophome';
+import { Category } from '../../category';
 
 @Component({
   selector: 'app-shop',
@@ -15,11 +16,14 @@ import { Shophome } from '../../shophome';
 })
 export class ShopComponent implements OnInit {
 
+  
+
+  
   id : number;
+  shop : Shop;
+  categories : Category[];
 
   @Output() products : Array<Product>;
- 
-  shop : Shop;
 
   constructor(private route: ActivatedRoute , public shopService : ShopService) {
 
@@ -34,6 +38,7 @@ export class ShopComponent implements OnInit {
       (data : Shophome) => { 
         this.shop = data.shop;
         this.products = data.featuredproducts;
+        this.categories = data.categories;
       }
     );
    
